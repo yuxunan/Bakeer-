@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甜點店教甜點</title>
+    <script src="https://kit.fontawesome.com/af84de9b64.js" crossorigin="anonymous"></script>
+    <link href="" rel="stylesheet">
+    
+    
+    <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Noto+Sans+Tc:100,300,400,500,700,900&display=swap);
+        *{
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            list-style: none;
+            transition: .2s linear;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+
+        
+
+        .main-header{
+            background-color: #FFD78C;
+        }
+        .main-header .container{
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+        }
+        .main-header .logo{
+            width: 100px;
+        }
+        .main-header .logo img{
+            width: 150px;
+            vertical-align: middle;
+            border-radius: 25% 25% 25% 25% ;
+        }
+        .main-header .main-nav{
+            margin: auto;
+            display: flex;
+        }
+        .main-header .main-nav a{
+            text-decoration: none;
+            color: #996400;
+            padding: 2px 30px;
+            position: relative;
+            transform: translateY(0px);
+            transition: .3s;
+        }
+        .main-header .main-nav a:hover{
+            transform: translateY(-5px);
+        }
+        .main-header .main-nav a:after{
+            content:'';
+            position: absolute;
+            left: 50%;
+            right:50%;
+            bottom: -5px;
+            height: 0;
+            border-bottom: 1px solid #996400 ;
+            transition: .3s;
+        }
+        .main-header .main-nav a:hover:after{
+            left: 0;
+            right: 0;
+        }
+       
+
+        .main-header .header-search{
+            display: flex;
+        }
+        .main-header .header-search button,
+        .main-header .header-search input{
+            border: none;
+            background-color: #fff;
+            padding: 10px 10px 10px;
+        }
+        .main-header .header-search button:focus,
+        .main-header .header-search input:focus{
+            outline: none;
+        }
+        .main-header .header-search button{
+            border-radius: 0px 200px 200px 0px;
+        }
+        .main-header .header-search input{
+            border-radius: 200px 0 0 200px;
+        }
+        .main-header .click a{
+            font-size: 25px;
+            color: #996400;
+            padding: 5px 10px 10px;
+        }
+        #menu_control{
+            position: absolute;
+            z-index: 2;
+        }
+
+
+        #menu-btn{ /*這一串是漢堡排製作 */
+            width: 40px;
+            height: 40px;
+            font-size: 1.9rem;
+            display: none; /*在下面rwd才會顯示出來*/
+            position: absolute;
+            cursor: pointer;
+            top: 29px;
+            left: 99%;
+        }/*這一串是漢堡排製作 */
+       
+
+
+
+        }
+        .main-header nav a{
+            display: block;
+            padding: 10px;
+        }
+
+
+
+
+      
+
+       
+
+
+        .member{
+            display: flex;
+            align-items: center;
+            flex: wrap;
+            width: 1200px;
+            gap: 2rem;
+            padding: 10px 150px 10px;
+        }
+       
+       
+        .member image {
+            width: 600px;
+        }
+            
+     
+        .login{
+            width: 660px ;
+            height: 320px;
+            
+            background-color: #FFE8BF;
+            border-radius: 10px;
+            border: 10px solid #FFE1AB ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .form{
+            font-family: 'Noto Sans TC',sans-serif;
+            color: #996400;
+        }
+        .form h2{
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-radius: 1px solid #fff;
+        }
+        .form .group{
+            margin-bottom: 10px;
+        }
+        .form .label{
+            font-family: 'Noto Sans TC',sans-serif;
+        }
+        
+        .form input{
+            width: 100%;
+            border: 1px solid #aaa;
+            line-height: 2;
+            border-radius: 5px;
+        }
+        .form .btn-group{
+            font-size: 0;
+            margin-top: 30px;
+        }
+        .form .btn{
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            background-color: #996400;
+            color: #fff;
+            width: 100px;
+            padding: 10px 0px;
+            font-family: 'Noto Sans TC',sans-serif;
+        }
+        .form .btn+ .btn{
+            margin-left: 20px;
+            margin-bottom: 13px;
+        }
+
+        .form .btn:hover{
+            background-color: #FFCC6E;
+            color: #4F4F4F;
+        }
+        .form a{
+            color: #4F4F4F;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .form:hover a{
+            color: #C678FF;
+        }
+
+
+
+
+         
+
+
+
+
+
+
+
+
+        .fix-icon{
+               padding: 30px ;
+               font-size: 48px;
+               color: #805300;
+               position: fixed;
+               bottom: 13%;
+               right: 0;
+               
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .main-footer{
+            padding: 100px 0 0 0;
+            background-color: #FFE8BF;
+        }
+        .main-footer .container{
+            display: flex;
+            width: 1200px;
+            margin: auto;
+        }
+        .footer-item{
+            width: 0;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .footer-item h4{
+            font-size: 24px;
+            color: #996400;
+            border-bottom: 1px solid #FFCC6E;
+            margin-bottom: .5em;
+            padding-bottom: .5em;
+        }
+        .footer-item nav{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-item nav a{
+            color: #996400;
+            line-height: 1.4;
+            text-decoration: none;
+            padding: 5px;
+        }
+        .footer-item nav a:hover{
+            color:#C678FF;
+        }
+        .footer-subs{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-subs form{
+            display: flex;
+            width: 100%;
+            margin: auto 0px;
+        }
+        .footer-subs input[type="text"],
+        .footer-subs input[type="submit"]{
+            border: none;
+            padding: 5px 10px;
+
+        }
+        .footer-subs input[type="text"]{
+           width: 0;
+           flex-grow: 1;
+           color:#C9C9C9;
+        }
+        .footer-subs input[type="submit"]{
+           color: #996400;
+           background-color: #FFCC6E;
+        }
+
+        .conpyright{
+            width: 100%;
+            text-align: center;
+            margin: 100px 0 0;
+            padding: 10px 0px;
+            background-color: #FFCC6E;
+            color: #996400;
+        }
+
+    </style>
+
+    
+</head>
+<body>
+
+    <header class="main-header">
+        <section class="container">
+            <a href="#" class="logo"><img src="imags/bakeer.png" alt="cakeshow"></a>
+            
+        
+            <nav class="main-nav">
+                <a href="file:///Users/yuxuan/Desktop/vstest/p36.html">首頁</a>
+                <a href="file:///Users/yuxuan/Desktop/vstest/p32.html">課程介紹</a>
+                <a href="file:///Users/yuxuan/Desktop/vstest/p31.html">當月課表</a>
+           
+            </nav>
+
+            <div id="menu-btn" class="fas fa-bars"></div>
+           
+            <div class="click">
+            <a href="file:///Users/yuxuan/Desktop/vstest/p34.html"><i class="fa-solid fa-user"></i></a>
+            </div>
+           
+        </section>
+    </header>
+
+     
+
+
+
+
+
+    
+    <div class="member">
+        <img src="imags/66666666.png" alt="">
+    <div class="login">
+        <div class="form-colse">
+           <p><i class="fa-thin fa-circle-x" ></i></p>
+        </div>
+        <form class="form">
+            <h2> <i class="fa-solid fa-user"></i>會員登入</h2>
+            <div class="group">
+                <label for="user_id">帳號</label>
+                <input type="text" name="" id="user_id">
+            </div>
+            <div class="group">
+                <label for="user_password">密碼</label>
+                <input type="password" name="" id="user_password">
+            </div>
+            <div class="btn-group">
+                <button class="btn">登入</button>
+                <button class="btn">取消</button>
+            </div>
+            <p>忘記密碼？ <a href="#">點我找回密碼</a></p>
+            <p>還沒有帳號嗎？ <a href="#">現在註冊</a></p>
+        </form>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="fix-icon">
+        <p><i class="fa-brands fa-facebook"></i></p>
+        <p><i class="fa-brands fa-instagram"></i></p>
+        <p><i class="fa-brands fa-line"></i></p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main-footer">
+        <div class="container">
+            <div class="footer-item">
+                <h4>甜點課程列表</h4>
+                <nav>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 證照課程班 </a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 樂齡甜點</a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 幼兒互動式團課</a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 下午茶必備</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>上課環境</h4>
+                <nav>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>證照班教室</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>空間一覽圖</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>幼兒班教室</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>關於我們</h4>
+                <nav>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p36.html"><i class="fa-solid fa-chevron-right"></i>創辦理念</a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p31.html"><i class="fa-solid fa-chevron-right"></i>當月課表</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>聯繫我們</a>
+                </nav>
+            </div>
+            <div class="footer-item footer-subs">
+                <h4>訂閱電子報</h4>
+                <form>
+                    <input type="text" value="輸入你的電子信箱">
+                    <input type="submit" value="訂閱">
+
+                </form>
+            </div>
+        </div>
+        <div class="conpyright">
+            copyright &copy; 2022
+            All Rights Reserved.
+        </div>
+    </div>
+    
+</body>
+</html>

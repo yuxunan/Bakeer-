@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甜點店教甜點</title>
+    <script src="https://kit.fontawesome.com/af84de9b64.js" crossorigin="anonymous"></script>
+    <link href="" rel="stylesheet">
+    
+    
+    <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Noto+Sans+Tc:100,300,400,500,700,900&display=swap);
+        *{
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            list-style: none;
+            transition: .2s linear;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+
+        
+
+        .main-header{
+            background-color: #FFD78C;
+        }
+        .main-header .container{
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+        }
+        .main-header .logo{
+            width: 100px;
+        }
+        .main-header .logo img{
+            width: 150px;
+            vertical-align: middle;
+            border-radius: 25% 25% 25% 25% ;
+        }
+        .main-header .main-nav{
+            margin: auto;
+            display: flex;
+        }
+        .main-header .main-nav a{
+            text-decoration: none;
+            color: #996400;
+            padding: 2px 30px;
+            position: relative;
+            transform: translateY(0px);
+            transition: .3s;
+        }
+        .main-header .main-nav a:hover{
+            transform: translateY(-5px);
+        }
+        .main-header .main-nav a:after{
+            content:'';
+            position: absolute;
+            left: 50%;
+            right:50%;
+            bottom: -5px;
+            height: 0;
+            border-bottom: 1px solid #996400 ;
+            transition: .3s;
+        }
+        .main-header .main-nav a:hover:after{
+            left: 0;
+            right: 0;
+        }
+       
+
+        .main-header .header-search{
+            display: flex;
+        }
+        .main-header .header-search button,
+        .main-header .header-search input{
+            border: none;
+            background-color: #fff;
+            padding: 10px 10px 10px;
+        }
+        .main-header .header-search button:focus,
+        .main-header .header-search input:focus{
+            outline: none;
+        }
+        .main-header .header-search button{
+            border-radius: 0px 200px 200px 0px;
+        }
+        .main-header .header-search input{
+            border-radius: 200px 0 0 200px;
+        }
+        .main-header .click a{
+            font-size: 25px;
+            color: #996400;
+            padding: 5px 10px 10px;
+        }
+        #menu_control{
+            position: absolute;
+            z-index: 2;
+        }
+
+
+        #menu-btn{ /*這一串是漢堡排製作 */
+            width: 40px;
+            height: 40px;
+            font-size: 1.9rem;
+            display: none;/*在下面rwd才會顯示出來*/
+            position: absolute;
+            cursor: pointer;
+            top: 29px;
+            left: 99%;
+        }/*這一串是漢堡排製作 */
+       
+
+
+
+        }
+        .main-header nav a{
+            display: block;
+            padding: 10px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .headertitle .heading { 
+            text-align: center;
+            display: inline-block;
+            height: auto;
+            line-height:1;
+            width: 400px;
+            display: flex;
+            vertical-align: middle;
+            padding: 40px 600px 10px; /*要加一個容器在外面才有辦法控制黃色的位置*/
+        }
+        .headertitle .heading span{ 
+            color: #454545;
+            font-size: 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: 	#FFB5B5; /*顏色不夠包周圍 用下面的邊匡做延伸*/
+            border: 10px solid 	#FFB5B5;
+            border-radius: 10px;
+            display: inline-block;
+        }
+       
+
+
+    
+    
+
+     
+
+        .table{
+            width: 1000px;
+            margin: auto;
+            padding: 30px 0px;
+            background-color: #fff;
+            
+        }
+        .table table{
+            width: 100%;
+            border: 40px solid #FFECC9;
+            border-radius: 0px 0px 45px 45px ;
+        }
+        .table thead{
+            background:#FFCC6E ;
+            color:#996400;
+        }
+        .table tbody tr:nth-child(even){
+            background-color: #FFCC6E;
+        }
+        .table tbody a{
+            color: #996400;
+            text-decoration: none;
+            
+        }
+        .table tfoot a{
+            color: #996400;
+            text-decoration: none;
+            
+        }
+        .table tbody a:hover{
+            color:#FF5959;
+        }
+        
+        .table th{
+            padding: 10px 14px;
+            font-family: 'Noto sans TC',sans-serif;
+        }
+        .table td{
+            padding:10px 10px;
+            font-family: 'Noto sans TC',sans-serif;
+        }
+        .table caption{
+            text-align: left;
+            padding: 30px  50px ;
+            background-color:#FFC14F ;
+            border-radius: 45px 45px 0px 0px;
+        }
+        .table caption a{
+            decoration:none;
+        }
+        .table caption{
+            color: #805300;
+        }
+
+
+
+
+
+
+
+
+        .gallery .heading { 
+            text-align: center;
+            display: inline-block;
+            height: auto;
+            line-height:1;
+            display: flex;
+            width: 400px;
+            vertical-align: middle;
+            padding: 20px 600px 10px; /*要加一個容器在外面才有辦法控制黃色的位置*/
+        }
+        .gallery .heading span{ 
+            color: #454545;
+            font-size: 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FFA1FF; /*顏色不夠包周圍 用下面的邊匡做延伸*/
+            border: 10px solid #FFA1FF;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+
+
+
+
+
+
+
+        .member{
+            width: 1000px;
+            margin: auto;
+            padding: 0px 0px;
+            display: flex;
+            align-items: center;
+            flex: wrap;
+            gap: 2rem;
+            
+        }
+       
+       
+        
+     
+        .login{
+            width: 500px ;
+            height: 420px;
+            background-color: #FFE8FF;
+            border-radius: 10px;
+            border: 10px solid #FFE8FF ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+      
+        
+        .member .login input{
+            width: 300px;
+            border: 1px solid #aaa;
+            line-height: 1.5;
+            border-radius: 5px;
+            padding: 10px 10px 10px;
+            font-family: 'Noto Sans TC',sans-serif;
+
+        }
+        .member .login h2{
+            color: #303030;
+            font-family: 'Noto Sans TC',sans-serif;
+            font-size: 20px;
+            
+
+        }
+        .member .login .btn-group{
+            font-size: 0;
+            margin-top: 20px;
+        }
+        .member .login .btn{
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            background-color: #996400;
+            color: #fff;
+            width: 100px;
+            padding: 7px 0px;
+            font-family: 'Noto Sans TC',sans-serif;
+        }
+        .member .login .btn+ .btn{
+            margin-left: 20px;
+            margin-bottom: 13px;
+        }
+
+        .member .login .btn:hover{
+            background-color: #FFCC6E;
+            color: #4F4F4F;
+        }
+        .login{
+            width: 500px ;
+            height: 420px;
+            background-color: #FFE8FF;
+            border-radius: 10px;
+            border: 10px solid #FFE8FF ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        
+
+
+
+
+        .fix-icon{
+               padding: 30px ;
+               font-size: 48px;
+               color: #805300;
+               position: fixed;
+               bottom: 13%;
+               right: 0;
+               
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        .wrap-second-item .heading { 
+            display: flex;
+            text-align: center;
+            height: auto;
+            line-height:1;
+            width: 400px;
+            vertical-align: middle;
+            padding: 40px 600px 10px;/*要加一個容器在外面才有辦法控制黃色的位置*/
+        }
+        .wrap-second-item .heading span{ 
+            color: #454545;
+            font-size: 30px;
+            display: flex;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FFB5B5; /*顏色不夠包周圍 用下面的邊匡做延伸*/
+            border: 10px solid #FFB5B5;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        
+        
+
+
+
+
+        .second-wrap{
+            display: flex;
+            align-items: center;
+            flex: wrap;
+            width: 800px;
+            gap: 6px;
+            padding: 10px 250px 40px;
+        }
+       
+        .member image {
+            width: 300px;
+        }
+        
+        .dialogue{
+            
+            width: 800px;
+           
+            box-shadow: 0 0 10px #cd853f;
+            background-color:#ffffff ;
+            
+        }
+        .user{
+            display: flex;
+            margin-bottom: 20px;
+            font-family: 'Noto snas TC',sans-serif;
+            align-items: flex-start;
+            
+        }
+        .local{
+            justify-content: flex-end;
+        }
+        .user .avatar{
+            width: 60px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .user .pic{
+            border-radius: 50% ;
+            overflow: hidden;
+        }
+        .user .pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .user .txt{
+            background-color: #ffffff;
+            padding: 16px; 
+            border-radius: 10px;      
+            color: #4F4F4F;
+            position: relative;
+            font-family: 'Noto snas TC',sans-serif;
+        }
+
+        .remote .txt{
+            margin-left: 20px;
+            margin-right: 80px;
+            background-color: #f5deb3;
+        }
+        .local .txt{
+            margin-right: 20px;
+            margin-left: 80px;
+            background-color: #b0c4de;
+            order: -1;
+        }
+        .remote .txt::before,
+        .local .txt::before{
+            content: '';
+            position: absolute;
+            top: 20px;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+        }
+        .remote .txt::before{
+            border-right: 10px solid #f5deb3;
+            left: -10px;
+        }
+        .local .txt::before{
+            border-left: 10px solid #b0c4de ;
+            right: -10px;
+        }
+       
+
+
+        
+      
+        
+      
+       
+        
+        
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .main-footer{
+            padding: 100px 0 0 0;
+            background-color: #FFE8BF;
+        }
+        .main-footer .container{
+            display: flex;
+            width: 1200px;
+            margin: auto;
+        }
+        .footer-item{
+            width: 0;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .footer-item h4{
+            font-size: 24px;
+            color: #996400;
+            border-bottom: 1px solid #FFCC6E;
+            margin-bottom: .5em;
+            padding-bottom: .5em;
+        }
+        .footer-item nav{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-item nav a{
+            color: #996400;
+            line-height: 1.4;
+            text-decoration: none;
+            padding: 5px;
+        }
+        .footer-item nav a:hover{
+            color:#C678FF;
+        }
+        .footer-subs{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-subs form{
+            display: flex;
+            width: 100%;
+            margin: auto 0px;
+        }
+        .footer-subs input[type="text"],
+        .footer-subs input[type="submit"]{
+            border: none;
+            padding: 5px 10px;
+
+        }
+        .footer-subs input[type="text"]{
+           width: 0;
+           flex-grow: 1;
+           color:#C9C9C9;
+        }
+        .footer-subs input[type="submit"]{
+           color: #996400;
+           background-color: #FFCC6E;
+        }
+
+        .conpyright{
+            width: 100%;
+            text-align: center;
+            margin: 150px 0 0;
+            padding: 10px 0px;
+            background-color: #FFCC6E;
+            color: #996400;
+        }
+
+    </style>
+
+    
+</head>
+<body>
+
+
+
+  
+
+
+
+
+
+
+    <header class="main-header">
+        <section class="container">
+            <a href="#" class="logo"><img src="imags/bakeer.png" alt="cakeshow"></a>
+            
+        
+            <nav class="main-nav">
+                <a href="file:///Users/yuxuan/Desktop/vstest/p36.html">首頁</a>
+                <a href="file:///Users/yuxuan/Desktop/vstest/p32.html">課程介紹</a>
+                <a href="file:///Users/yuxuan/Desktop/vstest/p31.html">當月課表</a>
+           
+            </nav>
+
+            <div id="menu-btn" class="fas fa-bars"></div>
+           
+            <div class="click">
+            <a href="file:///Users/yuxuan/Desktop/vstest/p34.html"><i class="fa-solid fa-user"></i></a>
+            </div>
+           
+        </section>
+    </header>
+
+     
+
+
+    
+
+
+
+    <section class="headertitle" id="headertitle">
+        <h1 class="heading">
+            <span>當</span>
+            <span>月</span>
+            <span>課</span>
+            <span>表</span>
+        </h1>
+    </section>
+
+
+    <div class="table">
+        <table>
+            <caption>
+                2022年 5月課程表
+            </caption>
+            <thead>
+                <tr>    
+                    <th scope="col">時間</th>
+                    <th scope="col">星期三</th>
+                    <th scope="col">星期四</th>
+                    <th scope="col">星期五</th>    
+                    <th scope="col">星期六</th> 
+                    <th scope="col">星期日</th>   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="">08:00-10:00</a></td>
+                    <td><a href="">麵包證照丙級</a></td>
+                    <td><a href="">西點證照丙級</a></td>
+                    <td><a href="">樂齡成長團課</a></td>
+                    <td><a href="">幼兒烘焙體驗營</a></td>
+                    <td><a href="">韓式雕花蛋糕</a></td>
+
+                </tr>
+                <tr>
+                    <td><a href="">09:00-11:00</a></td>
+                    <td><a href="">麵包證照丙級</a></td>
+                    <td><a href="">西點證照丙級</a></td>
+                    <td><a href="">造型饅頭</a></td>
+                    <td><a href="">幼兒烘焙體驗營</a></td>
+                    <td><a href="">全英語情境廚房</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">11:00-13:00</a></td>
+                    <td><a href=""></a></td>
+                    <td><a href=""></a></td>
+                    <td><a href="">檸檬布丁派</a></td>
+                    <td><a href="">韓式雕花進階班</a></td>
+                    <td><a href="">冠軍麵包達人實體課</a></td>
+
+                </tr>
+                <tr>
+                    <td><a href="">13:00-15:00</a></td>
+                    <td><a href="">手做鳳梨酥</a></td>
+                    <td><a href="">達克瓦茲</a></td>
+                    <td><a href="">貴婦下午茶專班</a></td>
+                    <td><a href="">水果千層蛋糕</a></td>
+                    <td><a href="">巧克力蛋糕捲</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">15:00-17:00</a></td>
+                    <td><a href="">日式洋果子</a></td>
+                    <td><a href="">翻糖蛋糕</a></td>
+                    <td><a href="">西點丙級證照</a></td>
+                    <td><a href="">全日語烘焙課</a></td>
+                    <td><a href="">巧克力夾心餅</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">17:00-19:00</a></td>
+                    <td><a href="">甜點創業班</a></td>
+                    <td><a href="">樂齡甜點</a></td>
+                    <td><a href="">西點丙級證照</a></td>
+                    <td><a href="">幼兒全美語廚房</a></td>
+                    <td><a href="">烘焙約會聯誼</a></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><a href="">備註</a></td>
+                    <td colspan="5"><a href="">請於課程前一時段，於網站預約上課號碼牌</a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+ 
+
+
+
+
+
+    <section class="gallery" id="gallery">
+        <h1 class="heading">
+            <span>課</span>
+            <span>程</span>
+            <span>預</span>
+            <span>約</span>
+        </h1>
+    </section>
+
+
+
+
+    <div class="member">
+        <img src="imags/888888.png" alt="">
+
+       <div class="login">
+    
+        <form action="">
+            <div class="inputBox">
+                <h2>上課日期</h2>
+                <input type="date" >
+            </div>
+            <div class="inputBox">
+                <h2>預約課程</h2>
+                <input type="text" placeholder="想上哪一堂課呢">
+            </div>
+            <div class="inputBox">
+                <h2>上課時段</h2>
+                <input type="time" >
+            </div>
+            <div class="inputBox">
+                <h2>姓名</h2>
+                <input type="text" placeholder="寫下您的真實姓名">
+            </div>
+            <div class="btn-group">
+                <button class="btn">提交預約</button>
+                <button class="btn">取消</button>
+            </div>
+            
+        </form>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <section class="wrap-second-item" id="wrap-second-item">
+        <h1 class="heading">
+            <span>你</span>
+            <span>可</span>
+            <span>能</span>
+            <span>想</span>
+            <span>知</span>
+            <span>道</span>
+        </h1>
+    </section>
+
+
+
+
+
+
+
+
+
+    <div class="second-wrap">
+        <img src="imags/6767676.png" alt="">
+
+        <div class="dialogue">
+            <div class="user remote">
+                <div class="avatar">
+                    <div class="pic">
+                        <img src="imags/man-3803551_1280.jpg" alt="">
+                    </div>
+                    <div class="name">Danny</div>
+                </div>
+                <div class="txt">
+                   您好！如果我沒有任何烘焙基礎，可以直接來體驗課程嗎？
+                </div>
+            </div>
+            <div class="user local">
+                <div class="avatar">
+                    <div class="pic">
+                        <img src="imags/bakeer.png" alt="">
+                    </div>
+                    <div class="name">bakeer</div>
+                </div>
+                <div class="txt">
+                    <p>當然可以呀！老師會手把手親自教大家，保證會做出美味可口的成品呦</p>
+                </div>
+            </div>
+            <div class="user remote">
+                <div class="avatar">
+                    <div class="pic">
+                        <img src="imags/man-3803551_1280.jpg" alt="">
+                    </div>
+                    <div class="name">Danny</div>
+                </div>
+                <div class="txt">
+                    <h2><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i></h2>
+                   太好了！請問上課前需要注意什麼嗎？
+                </div>
+            </div>
+            <div class="user local">
+                <div class="avatar">
+                    <div class="pic">
+                        <img src="imags/bakeer.png" alt="">
+                    </div>
+                    <div class="name">bakeer</div>
+                </div>
+                <div class="txt">
+                    <p>只需要先看當月課表，選擇你想上的課程，並瀏覽當月課表下方的注意事項即可呦！</p>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="fix-icon">
+        <p><i class="fa-brands fa-facebook"></i></p>
+        <p><i class="fa-brands fa-instagram"></i></p>
+        <p><i class="fa-brands fa-line"></i></p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main-footer">
+        <div class="container">
+            <div class="footer-item">
+                <h4>甜點課程列表</h4>
+                <nav>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 證照課程班 </a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 樂齡甜點</a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 幼兒互動式團課</a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p32.html"><i class="fa-solid fa-chevron-right"></i> 下午茶必備</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>上課環境</h4>
+                <nav>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>證照班教室</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>空間一覽圖</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>幼兒班教室</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>關於我們</h4>
+                <nav>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p36.html"><i class="fa-solid fa-chevron-right"></i>創辦理念</a>
+                    <a href="file:///Users/yuxuan/Desktop/vstest/p31.html"><i class="fa-solid fa-chevron-right"></i>當月課表</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>聯繫我們</a>
+                </nav>
+            </div>
+            <div class="footer-item footer-subs">
+                <h4>訂閱電子報</h4>
+                <form>
+                    <input type="text" value="輸入你的電子信箱">
+                    <input type="submit" value="訂閱">
+
+                </form>
+            </div>
+        </div>
+        <div class="conpyright">
+            copyright &copy; 2022
+            All Rights Reserved.
+        </div>
+    </div>
+    
+</body>
+</html>

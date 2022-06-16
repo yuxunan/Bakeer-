@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: #fa0; 
+    font-size: 40px;
+    border:darkorange 5px solid ;
+}
+nav{
+    background-color: black;
+    text-align: center;
+    font-size: 0;
+}
+nav a{
+    color: aliceblue;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 16px;
+    background-color: black;
+    transition: 0.5s;
+}
+nav a:hover{
+    background-color: blueviolet;
+}
+ul {
+    list-style:url("circle.gif")none inside;
+  }
+nav a:visited{
+    color: #fa0;
+}
+p{
+    color: blue;
+    margin-bottom: 30px;
+    
+}
+table {
+    border-style:solid;
+    font-family: arial;
+    font-size:14px;
+  }
+  th {
+    background-color:yellow;
+  }
+  td {
+    border-bottom:1 solid #000000;
+  }
+  .fail {
+    color:#FF0000;
+  }
