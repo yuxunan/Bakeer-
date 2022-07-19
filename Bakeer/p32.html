@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甜點店教甜點</title>
+    <script src="https://kit.fontawesome.com/af84de9b64.js" crossorigin="anonymous"></script>
+    <link href="" rel="stylesheet">
+    
+    <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Noto+Sans+Tc:100,300,400,500,700,900&display=swap);
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        html, body{
+        height: 100%;
+        }
+        
+        .main-header{
+            background-color: #FFD78C;
+        }
+        .main-header .container{
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .main-header .logo{
+            width: 100px;
+        }
+        .main-header .logo img{
+            width: 150px;
+            vertical-align: middle;
+            border-radius: 25% 25% 25% 25% ;
+        }
+        .main-header .main-nav{
+            margin: auto;
+            display: flex;
+        }
+        .main-header .main-nav a{
+            text-decoration: none;
+            color: #996400;
+            padding: 2px 30px;
+            position: relative;
+            transform: translateY(0px);
+            transition: .3s;
+        }
+        .main-header .main-nav a:hover{
+            transform: translateY(-5px);
+        }
+        .main-header .main-nav a:after{
+            content:'';
+            position: absolute;
+            left: 50%;
+            right:50%;
+            bottom: -5px;
+            height: 0;
+            border-bottom: 1px solid #996400 ;
+            transition: .3s;
+        }
+        .main-header .main-nav a:hover:after{
+            left: 0;
+            right: 0;
+        }
+       
+
+        .main-header .header-search{
+            display: flex;
+        }
+        .main-header .header-search button,
+        .main-header .header-search input{
+            border: none;
+            background-color: #fff;
+            padding: 10px 10px 10px;
+        }
+        .main-header .header-search button:focus,
+        .main-header .header-search input:focus{
+            outline: none;
+        }
+        .main-header .header-search button{
+            border-radius: 0px 200px 200px 0px;
+        }
+        .main-header .header-search input{
+            border-radius: 200px 0 0 200px;
+        }
+        .main-header .click a{
+            font-size: 25px;
+            color: #996400;
+            padding: 5px 10px 10px;
+        }
+
+
+      
+
+
+
+
+
+
+
+       
+       
+
+
+    
+    
+
+
+
+
+
+
+
+        .twiceabout{
+            display: flex;
+            align-items: center;
+            flex: wrap;
+            width: 1100px;
+            gap: 1rem;
+            padding: 50px 170px 30px;
+            
+        }
+       
+        
+        .twiceabout .image img{
+            width: 550px;
+            height: 400px;
+            border-radius: 10px;
+            padding: 0px 30px 0;
+            border-radius: 10%; /* 如果改成％就會有橢圓感 */
+            
+        }
+       
+        .twiceabout .content p{
+            font-size: 20px;
+            color: #4A4A4A;
+            
+           
+        }
+        .headertitle .heading { 
+            text-align: center;
+            display: inline-block;
+            height: auto;
+            line-height:1;
+           
+            vertical-align: middle;
+            
+        }
+        .headertitle .heading span{ 
+            color: #454545;
+            font-size: 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: 		#FFD4FF; /*顏色不夠包周圍 用下面的邊匡做延伸*/
+            border: 10px solid 		#FFD4FF;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 60px;
+        }
+
+        
+        .twiceabout .teachergroup .txt{
+            width: 500px;
+            margin-top: 30px;
+            
+            
+        }
+        .twiceabout .teachergroup .txt p{
+            display: flex;
+            color: #4A4A4A;
+            line-height: 25px;
+            
+            
+           
+        }
+
+
+        .twiceabout .teachergroup .btn-btn{
+            margin-top: 30px;
+        }
+        .twiceabout .teachergroup .btn-btn .btn{
+            font-size: 19px;
+            border-radius: 10px;
+            border: none;
+            text-decoration: none;
+            background-color: #FFB5FF ;
+            color: #545454;
+            width: 80px;
+            height: 10px;
+            font-family: 'Noto Sans TC',sans-serif;
+            padding: 10px;
+           
+            
+            
+        }
+        
+        .twiceabout .teachergroup .btn-btn .btn:hover{
+            background-color: #996400;
+            color: #fff;
+        }
+      
+        
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+        .member{
+            display: flex;
+            align-items: center;
+            flex: wrap;
+            width: 1100px;
+            gap: 2rem;
+            padding: 10px 150px 10px;
+        }
+       
+       
+        .member image {
+            width: 600px;
+        }
+            
+     
+        .login{
+            width: 500px ;
+            height: 320px;
+            
+            background-color: #FFE8BF;
+            border-radius: 10px;
+            border: 10px solid #FFE1AB ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .form{
+            font-family: 'Noto Sans TC',sans-serif;
+            color: #996400;
+        }
+        .form h2{
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-radius: 1px solid #fff;
+        }
+        .form .group{
+            margin-bottom: 10px;
+        }
+        .form .label{
+            font-family: 'Noto Sans TC',sans-serif;
+        }
+        
+        .form input{
+            width: 100%;
+            border: 1px solid #aaa;
+            line-height: 2;
+            border-radius: 5px;
+        }
+        .form .btn-group{
+            font-size: 0;
+            margin-top: 30px;
+        }
+        .form .btn{
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            background-color: #996400;
+            color: #fff;
+            width: 100px;
+            padding: 10px 0px;
+            font-family: 'Noto Sans TC',sans-serif;
+        }
+        .form .btn+ .btn{
+            margin-left: 20px;
+            margin-bottom: 13px;
+        }
+
+        .form .btn:hover{
+            background-color: #FFCC6E;
+            color: #4F4F4F;
+        }
+        .form a{
+            color: #4F4F4F;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .form:hover a{
+            color: #C678FF;
+        }
+
+  
+
+
+
+
+
+
+
+
+
+            .main-title{
+                text-align: center;
+                color: #454545;
+                padding: 40px 20px 60px;
+                margin: auto;
+                font-family: 'Noto Sans TC', sans-serif;
+            }
+            .main-title .force{
+                text-align: center;
+                justify-content: center;
+            }
+
+            .force{
+                max-width: 1400px;
+                display: flex;
+                padding: 20px 0;
+                    
+            }
+            .force .item{
+                width: 368px;
+                margin: 15px;
+                text-align:justify;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                color: #454545;
+                font-family: 'Noto Sans TC', sans-serif;
+                transform: translateY(0px);
+                transition: .5s;
+            }
+            .force .item img{
+                width: 100%;
+                vertical-align: middle;
+            }
+            .footer .item h2{
+                border-bottom: 1px solid#888;
+                padding-bottom: .3em;
+                margin-bottom: .4em;
+                font-weight: 900;
+                transition: .25s;
+            }
+            .force .item p{
+                line-height: 1.6;
+                font-weight: 300;
+                transition: .25s;
+            }
+            .force .item .txt{
+                padding: 20px;
+                position: relative;
+            }
+            .force .item .txt:before{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 0;
+                top: 0;
+                border-top: 50px solid transparent;
+                border-left: 184px solid #fff;
+                border-right: 184px solid #fff;
+                transform: translateY(-100%);
+            }
+            .force .item:hover{
+                transform: translateY(-50px);
+            }
+            .force .item:hover .txt{
+                background-image: linear-gradient();
+            }
+            .force .item:hover .txt:before{
+                border-left: 184px solid #FFCC6E;
+                border-right: 184px solid #FFCC6E;
+            }
+            .force .item:hover h2{
+                color:#fff;
+                border-bottom-color:#fff ;
+            }
+            .force .item:hover p{
+                color:#fff;
+            }
+
+
+
+
+
+
+
+
+
+
+        .contest{
+            text-align: center;
+            color: #454545;
+            padding: 0px 40px;
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: auto;
+        }   
+
+
+
+        .wrap{
+            display: flex;
+            align-items: center;
+            width: 1200px;
+            margin: 100px auto;
+            margin: auto;
+            /*background-color: #FFD382;
+            border-radius: 20px;*/
+            padding:70px 30px;
+        }
+        .warp  .item{
+            width: 370px;
+            margin: 0 15px;
+            text-align: center;
+            border: 10px solid #FFCC6E;
+            background-color: #FFE8BF;
+            border-radius: 20px;
+            height:900px;
+        }
+
+        .wrap img{
+            width: 150px;
+            height: 200px;
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        .wrap .icon{
+            width: 150px;
+           
+            margin: -55px  auto 20px;
+            
+        }
+        .wrap .txt{
+            padding: 50px ;
+            border-radius: 20px;
+            padding-top: 20px;
+        }
+        .wrap .item h2{
+            color:#454545;
+            text-align: center;
+        }
+        .wrap .item h3{
+            color: #888;
+            text-align: center;
+        }
+        .wrap .item p{
+            text-align: center;
+            width: 300px;
+            padding-top: 15px;
+        }
+       
+
+        .wrap .item:hover h2{
+           color: #B87800;
+        }
+        .wrap .item:hover h3{
+            color: #B87800;
+        }
+        .wrap .item:hover p{
+            color: #B87800;
+        }
+        
+
+
+        
+
+
+
+        .gallery .heading { 
+            text-align: center;
+            display: inline-block;
+            height: auto;
+            line-height:1;
+            width: 400px;
+            vertical-align: middle;
+            padding: 40px 120px 40px; /*要加一個容器在外面才有辦法控制黃色的位置*/
+        }
+        .gallery .heading span{ 
+            color: #454545;
+            font-size: 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FFB630; /*顏色不夠包周圍 用下面的邊匡做延伸*/
+            border: 10px solid #FFB630;
+            border-radius: 10px;
+        }
+
+
+        .gallery .box-container{
+            display: flex;
+            flex-wrap: wrap;
+           
+            gap: 1.5rem;
+        }
+
+        .gallery .box-container .box{
+            overflow: hidden;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+            border: 1rem solid #fff;
+            border-radius: 10px;
+            height: 200px;
+            width: 300px;
+            position: relative;
+           
+        }
+        .gallery .box-container .box img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery .box-container .box .content{
+            position: absolute;
+            top:-100; left: 0px; /*設定位置在上面 按到他 位置才會變到下面來*/
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background:rgba(0, 0, 0,.7) ;
+            padding-top: 35px; /*控制文字的上面空間*/
+            line-height: 60px;
+        }
+        .gallery .box-container .box:hover .content{
+            top:0; left: 0;
+           
+        }
+        .gallery .box-container .box .content h3{
+            font-size: 18px;
+            color: #FFB630;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .gallery .box-container .box .content p{
+            font-size: 13px;
+            color: #eee;
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 10px;
+        }
+        .gallery .box-container .box .content .btn{
+            background-color: #FFCC6E;
+            border: 5px solid #FFCC6E;
+            border-radius: 10px;
+            width: 25px;
+            font-size: 13px;
+            text-decoration: none;
+            font-family: 'Noto Sans TC', sans-serif;
+            
+           
+        }
+
+
+
+
+
+        .fix-icon{
+               padding: 30px ;
+               font-size: 48px;
+               color: #805300;
+               position: fixed;
+               bottom: 13%;
+               right: 0;
+               
+            }
+     
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .main-footer{
+            padding: 100px 0 0 0;
+            background-color: #FFE8BF;
+        }
+        .main-footer .container{
+            display: flex;
+            width: 1200px;
+            margin: auto;
+        }
+        .footer-item{
+            width: 0;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .footer-item h4{
+            font-size: 24px;
+            color: #996400;
+            border-bottom: 1px solid #FFCC6E;
+            margin-bottom: .5em;
+            padding-bottom: .5em;
+        }
+        .footer-item nav{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-item nav a{
+            color: #996400;
+            line-height: 1.4;
+            text-decoration: none;
+            padding: 5px;
+        }
+        .footer-item nav a:hover{
+            color:#C678FF;
+        }
+        .footer-subs{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-subs form{
+            display: flex;
+            width: 100%;
+            margin: auto 0px;
+        }
+        .footer-subs input[type="text"],
+        .footer-subs input[type="submit"]{
+            border: none;
+            padding: 5px 10px;
+
+        }
+        .footer-subs input[type="text"]{
+           width: 0;
+           flex-grow: 1;
+           color:#C9C9C9;
+        }
+        .footer-subs input[type="submit"]{
+           color: #996400;
+           background-color: #FFCC6E;
+        }
+
+        .conpyright{
+            width: 100%;
+            text-align: center;
+            margin: 150px 0 0;
+            padding: 10px 0px;
+            background-color: #FFCC6E;
+            color: #996400;
+        }
+
+    </style>
+
+    
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="imags/bakeer.png" alt="cakeshow">
+            </a>
+            <nav class="main-nav">
+                <a href="file:///Users/yuxuan/Desktop/Bakeer/p36.html">首頁</a>
+                <a href="file:///Users/yuxuan/Desktop/Bakeer/p32.html">課程介紹</a>
+                <a href="file:///Users/yuxuan/Desktop/Bakeer/p31.html">當月課表</a>
+                
+            </nav>
+            <form class="header-search">
+                <input type="search" name="" id="">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="click">
+            <a href="file:///Users/yuxuan/Desktop/Bakeer/p34.html"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+
+
+  
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<section class="twiceabout" id="twiceabout">
+       <div class="image">
+       <img src="imags/2323233.jpeg" alt="">
+       </div> 
+
+        <div class="teachergroup">
+        <div class="content">
+            <section class="headertitle" id="headertitle">
+                <h1 class="heading">
+                    <span>母</span>
+                    <span>親</span>
+                    <span>節</span>
+                    <span>限</span>
+                    <span>定</span>
+                    
+                </h1>
+            </section>
+        <p>草莓香草卡士達派</p>
+        </div>
+   
+    
+        <div class="txt">
+              <p>本月份人氣限定課程來嘍！</p>
+              <p>濃郁的卡士達配上法國鐵塔牌奶油塔皮</p>
+              <p>還想不到要送母親什麼母親節蛋糕嗎？</p>
+              <p>快來體驗我們的5月限定烘焙課</p>
+              <p>讓手做的幸福傳遞下去吧！</p>
+        </div>
+        <div class="btn-btn">
+              <a href="p31.html" class="btn"><i class="fa-solid fa-angles-right"></i>預約上課<i class="fa-solid fa-angles-left"></i></a>
+        </div>
+     
+        </div>
+</section>
+
+
+
+
+
+
+
+
+
+       <div class="main-title">
+                <div class="container">
+                    <h1>烘焙課程系列</h1>
+                         <p>此為課程內容參考，詳細開課時間請點選當月課程表</p>
+                </div>
+                <div class="force">
+                   <div class="item">
+                    <img src="imags/cookers.jpeg">
+                    <div class="txt">
+                        <h2>麵包＆西點證照班</h2>
+                        <p>由專業老師授課,傳授考取證照班的操作細節與原料換算方式,上課環境比照考場設備,學員考照率100%</p>
+                    </div>
+                    </div>
+                    <div class="item">
+                    <img src="imags/istockphoto-155370116-612x612.jpeg">
+                    <div class="txt">
+                        <h2>幼兒全美語廚房</h2>
+                        <p>聘請專業外語老師授課,透過還原最有效率的外語練習環境,除了促進英聽能力與口說能力,並且快樂學習烘焙課程</p>
+                    </div>
+                    </div>
+                    <div class="item">
+                    <img src="imags/istockphoto-488666002-612x612.jpeg">
+                    <div class="txt">
+                        <h2>樂齡甜點</h2>
+                        <p>提供長輩一個放鬆的好去處,由專業營養師傳授健康營養的食譜,並透過遊戲活動讓長輩從中體會樂趣,創造銀髮族新生活體驗</p>
+                    </div>
+                    </div>
+                </div>
+        </div>
+
+
+
+      
+
+
+        <div class="contest">
+             <h1>師資介紹</h1>
+        </div>
+
+
+
+      <div class="wrap">
+            <div class="item">
+                  <div class="icon">
+                      <img src="imags/11111.jpeg" alt="">
+                  </div>
+                  <div class="txt">
+                      <h2>Wennie chung 老師</h2>
+                      <h3><i class="fa-solid fa-children"></i>兒童烘焙教學經歷10年</h3>
+                      <p>「透過模擬外語的環境，促進大腦多元發展，將日常連結刺激孩子的創造力，訓練思考並激發無限可能，這是堂能讓孩子滿載而歸的烘焙實作外語課。</p>
+                  </div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <img src="imags/2222.jpeg" alt="">
+                </div>
+                <div class="txt">
+                    <h2>kenny 老師</h2>
+                    <h3><i class="fa-solid fa-crown"></i>職人烘焙大賽冠軍</h3>
+                    <p>「您還在追求忙碌的生活嗎？這堂課將帶你去看世界上不同的美好，將天然食材容物烘焙之中，用最天然的工法，做出手作的溫度，讓我們一起探索烘焙的宇宙。」</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <img src="imags/333.jpeg" alt="">
+                </div>
+                <div class="txt">
+                    <h2>Rayn Lee 老師</h2>
+                    <h3><i class="fa-solid fa-mitten"></i>100%烘焙考照率</h3>
+                    <p>「你也想考取烘焙證照嗎？我將會透過扎實的實作課程，教你如何應變所有考試過程中的小狀況，熟練所有的考試題型與技巧，即時身臨場考試也能老實在在。」</p>
+                </div>
+            </div>
+        </div>
+
+
+  
+
+
+       <section class="gallery" id="gallery">
+           <h1 class="heading">
+               <span>照</span>
+               <span>片</span>
+               <span>介</span>
+               <span>紹</span>
+           </h1>
+
+           <div class="box-container">
+
+                <div class="box">
+                    <img src="imags/g-1.jpeg" alt="">
+                    <div class="content">
+                        <h3>證照班上課環境</h3>
+                        <p>100%還原考場環境</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-2.jpeg" alt="">
+                    <div class="content">
+                        <h3>嚴選食材</h3>
+                        <p>食材嚴格把關，安心又放心</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-3.jpeg" alt="">
+                    <div class="content">
+                        <h3>多元課程廚房環境</h3>
+                        <p>開闊寬敞的環境，學習更神速</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-4.jpeg" alt="">
+                    <div class="content">
+                        <h3>專業烘焙設備</h3>
+                        <p>全館使用烘焙競賽指定品牌</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-5.jpeg" alt="">
+                    <div class="content">
+                        <h3>上課照片</h3>
+                        <p>專業授課，讓你清楚且透徹學習</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-6.jpeg" alt="">
+                    <div class="content">
+                        <h3>嚴選食材</h3>
+                        <p>食材嚴格把關，安心又放心</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-7.jpeg" alt="">
+                    <div class="content">
+                        <h3>證照班上課環境</h3>
+                        <p>100%還原考場環境</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-8.jpeg" alt="">
+                    <div class="content">
+                        <h3>作品成果</h3>
+                        <p>夏日水果與巧克力淋面戚風蛋糕</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imags/g-9.jpeg" alt="">
+                    <div class="content">
+                        <h3>上課安全</h3>
+                        <p>兒童使用相關設備皆需師長陪伴，以免受傷</p>
+                        <a href="#" class="btn">觀看更多</a>
+                    </div>
+                </div>
+                
+
+           </div>
+       </section>
+
+
+
+
+     
+
+
+
+       <div class="fix-icon">
+        <p><i class="fa-brands fa-facebook"></i></p>
+        <p><i class="fa-brands fa-instagram"></i></p>
+        <p><i class="fa-brands fa-line"></i></p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main-footer">
+        <div class="container">
+            <div class="footer-item">
+                <h4>甜點課程列表</h4>
+                <nav>
+                    <a href="file:///Users/yuxuan/Desktop/Bakeer/p32.html"><i class="fa-solid fa-chevron-right"></i> 證照課程班 </a>
+                    <a href="file:///Users/yuxuan/Desktop/Bakeer/p32.html"><i class="fa-solid fa-chevron-right"></i> 樂齡甜點</a>
+                    <a href="file:///Users/yuxuan/Desktop/Bakeer/p32.html"><i class="fa-solid fa-chevron-right"></i> 幼兒互動式團課</a>
+                    <a href="file:///Users/yuxuan/Desktop/Bakeer/p32.html"><i class="fa-solid fa-chevron-right"></i> 下午茶必備</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>上課環境</h4>
+                <nav>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>證照班教室</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>空間一覽圖</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>幼兒班教室</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>關於我們</h4>
+                <nav>
+                    <a href="file:///Users/yuxuan/Desktop/Bakeer/p36.html"><i class="fa-solid fa-chevron-right"></i>創辦理念</a>
+                    <a href="file:///Users/yuxuan/Desktop/Bakeer/p31.html"><i class="fa-solid fa-chevron-right"></i>當月課表</a>
+                    <a href="#"><i class="fa-solid fa-chevron-right"></i>聯繫我們</a>
+                </nav>
+            </div>
+            <div class="footer-item footer-subs">
+                <h4>訂閱電子報</h4>
+                <form>
+                    <input type="text" value="輸入你的電子信箱">
+                    <input type="submit" value="訂閱">
+
+                </form>
+            </div>
+        </div>
+        <div class="conpyright">
+            copyright &copy; 2022
+            All Rights Reserved.
+        </div>
+    </div>
+    
+</body>
+</html>
